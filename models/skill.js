@@ -8,9 +8,19 @@ let skills = [
   module.exports = {
     getAll,
     getOne,
-    create
+    create,
+    deleteOne
   };
+
+  function deleteOne(id) {
+    // URL params are strings - convert to a number
+    id = parseInt(id);
+    // The Array.prototype.findIndex() method returns an index in the array if an element in the array satisfies the provided testing function; otherwise, it will return -1.
+    const idx = skills.findIndex(skill => skill.id === id);
+    skills.splice(idx, 1);
+  }
   
+
   function create(skill) {
    console.log(skill)
     skill.id = Date.now() % 1000000;
