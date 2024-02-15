@@ -8,6 +8,8 @@
 </head>
 <body>
     <h1>skills</h1>
+    <h3>Time <%= time %></h3>
+
     <ul>
       <% skills.forEach(function(s) { %>
         <li>
@@ -18,5 +20,7 @@
         </li>
       <% }); %>
     </ul>
+    <a href="/skills/new">Add a new skill</a>
+
   </body>
 </html>
