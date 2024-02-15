@@ -3,15 +3,20 @@ let skills = [
     { id: 2, name: 'HTML', proficiency: 'Intermediate' },
     { id: 3, name: 'CSS', proficiency: 'Beginner' },
   ]
-  module.exports = {
-    getAll
-  };
+
   
   module.exports = {
     getAll,
-    getOne
+    getOne,
+    create
   };
   
+  function create(skill) {
+   console.log(skill)
+    skill.id = Date.now() % 1000000;
+    skills.push(skill);
+  }
+
   function getOne(id) {
     // URL params are strings - convert to a number
     id = parseInt(id);
